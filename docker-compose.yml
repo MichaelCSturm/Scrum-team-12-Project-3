@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: stock_visualizer
+    container_name: stock_viz_app
+    ports:
+      - "5005:5000"
+    volumes:
+      - .:/app
+    environment:
+      FLASK_DEBUG: 1
+      ALPHA_VANTAGE_API_KEY: ${ALPHA_VANTAGE_API_KEY}
