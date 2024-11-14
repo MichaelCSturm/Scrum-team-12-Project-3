@@ -36,5 +36,19 @@ class TestQuestions(unittest.TestCase):
 
         self.assertEqual(main.variables.q3("a"), 1)
 
+    def test_q4(self):
+        self.assertEqual(main.variables.q4("2021-01-01"), 0)
+        self.assertEqual(main.variables.q4("2022-01-01"), 0)
+        self.assertEqual(main.variables.q4("2021-01-012222"), 1)
+        self.assertEqual(main.variables.q4("tommorow"), 1)
+    def test_q5(self):
+        self.assertEqual(main.variables.q5("2021-01-01"), 0)
+        self.assertEqual(main.variables.q5("2022-01-01"), 0)
+        self.assertEqual(main.variables.q5("2021-01-012222"), 1)
+        self.assertEqual(main.variables.q5("tommorow"), 1)
+    
+
+        
+
 if __name__ == '__main__':
     unittest.main()
