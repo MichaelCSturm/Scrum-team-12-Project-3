@@ -50,3 +50,30 @@ while True:
         continue
     variables.listOfInputs.append(answer)
     break
+while True:
+    print(variables.listofQuestions[3])
+    answer = input()
+    answer = answer.upper()
+    try:
+        datetime.strptime(answer, '%Y-%m-%d')
+        variables.listOfInputs.append(answer)
+        break
+    except:
+        print("Hey make sure your answer is formated like %Y-%m-%d'")
+        continue
+while True:
+    print(variables.listofQuestions[4])
+    answer = input()
+    answer = answer.upper()
+    try:
+        datetime.strptime(answer, '%Y-%m-%d')
+        variables.listOfInputs.append(answer)
+        break
+    except:
+        print("Hey make sure your answer is formated like %Y-%m-%d'")
+        continue
+    
+    
+
+
+    
