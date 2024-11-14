@@ -1,0 +1,40 @@
+import unittest
+import main
+
+#
+#       FOR THE TESTS ANY QUESTION 0 = true. 1 = false !!!!!!!!!!
+#
+class TestQuestions(unittest.TestCase):
+    def test_q1(self):
+        #q1result = 
+        self.assertEqual(main.variables.q1("IBM"), 0)
+        self.assertEqual(main.variables.q1("GOOG"), 0)
+
+
+        # Getting the invaild symbols
+        self.assertEqual(main.variables.q1("AAAAAAAAAA"),1)
+        self.assertEqual(main.variables.q1("123123123@@@@@@"), 1)
+
+    def test_q2(self):
+        #q2result = main.variables.q2()
+        self.assertEqual(main.variables.q2("1"), 0)
+        self.assertEqual(main.variables.q2("2"), 0)
+
+
+        # Invaild inputs
+        self.assertEqual(main.variables.q2("1111"), 1)
+        self.assertEqual(main.variables.q2("9"), 1)
+        self.assertEqual(main.variables.q2("a"), 1)
+    def test_q3(self):
+        self.assertEqual(main.variables.q3("1"), 0)
+        self.assertEqual(main.variables.q3("2"), 0)
+        self.assertEqual(main.variables.q3("3"), 0)
+        self.assertEqual(main.variables.q3("4"), 0)
+
+        self.assertEqual(main.variables.q3("12"), 1)
+        self.assertEqual(main.variables.q3("12123123"), 1)
+
+        self.assertEqual(main.variables.q3("a"), 1)
+
+if __name__ == '__main__':
+    unittest.main()
