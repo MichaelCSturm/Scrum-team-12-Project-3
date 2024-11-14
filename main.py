@@ -7,7 +7,7 @@ from datetime import datetime
 class variables:
     listofQuestions = ['Enter the stock symbol for the company you would like',
                    'Enter chart type you would like (line: 1/bar: 2)',
-                   'Enter the time series function desired (TIME_SERIES_DAILY, TIME_SERIES_WEEKLY, etc.)',
+                   'Enter the time series function desired (TIME_SERIES_DAILY : 1, TIME_SERIES_WEEKLY : 2, TIME_SERIES_MONTHLY : 3, TIME_SERIES_MONTHLY_ADJUSTED: 4)',
                    'Enter the beginning date in YYYY-MM-DD ',
                    'Enter the end date in YYYY-MM-DD format', 
                    'Processin'
