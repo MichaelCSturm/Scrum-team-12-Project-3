@@ -5,6 +5,7 @@ import stock_visualization
 from datetime import datetime
 
 class variables:
+
     def q1(answer):
             answer = answer.upper()
             if len(answer) > 7 or len(answer) < 1 or answer.isalpha() == False:
@@ -17,14 +18,25 @@ class variables:
             if len(answer) != 1 or answer.isalpha() or int(answer)>2 or int(answer)<1:
                 print("Hey make sure your answer is 1 or 2!")
                 return 1
-            variables.listOfInputs.append(answer)
+            if answer == "1":
+                 variables.listOfInputs.append("LINE")
+            if answer == "2":
+                 variables.listOfInputs.append("BAR")
             return 0
     def q3(answer):
             answer = answer.upper()
             if len(answer) != 1 or answer.isalpha() or int(answer)>4 or int(answer)<1:
                 print("Hey make sure your answer is 1 through 4!")
                 return 1
-            variables.listOfInputs.append(answer)
+            if answer =="1":
+                 
+                variables.listOfInputs.append("TIME_SERIES_DAILY")
+            if answer =="2":
+                variables.listOfInputs.append("TIME_SERIES_WEEKLY")
+            if answer == "3":
+                 variables.listOfInputs.append("TIME_SERIES_MONTHLY")
+            if answer == "4":
+                 variables.listOfInputs.append("TIME_SERIES_MONTHLY_ADJUSTED")
             return 0
     def q4(answer):
             answer = answer.upper()
@@ -63,6 +75,20 @@ class variables:
     errorText = ''
     stringStartDate = ''
     stringEndDate =''
+    def runQuestions(question, asky):
+        while(True):
+            sentData = input(asky)
+            returnedValue = question(sentData)
+            print(variables.listOfInputs)
+            if returnedValue == 1:
+                 continue
+            break
+variables.runQuestions(variables.q1,variables.listofQuestions[0] )
+variables.runQuestions(variables.q2,variables.listofQuestions[1] )
+variables.runQuestions(variables.q3,variables.listofQuestions[2] )
+variables.runQuestions(variables.q4,variables.listofQuestions[3] )
+variables.runQuestions(variables.q5,variables.listofQuestions[4] )
+variables.sendData()
 
 
 
